@@ -26,15 +26,88 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/world-fuel-services.png
 tags:
   - Fortune 100
+  - Energy
+  - Aviation Fuel
+  - Marine Fuel
+  - Fuel Distribution
+  - Energy Management
+  - Sustainability
+  - Logistics
+  - Fuel Cards
+created: '2026-03-24'
+modified: '2026-08-29'
+maintainers:
+  - FN: API Evangelist
+    email: info@apievangelist.com
 url: 
   https://raw.githubusercontent.com/api-evangelist/world-fuel-services/refs/heads/main/apis.yml
-modified: '2026-03-24'
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/world-fuel-services-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/world-fuel-services
   - type: Website
-    url: https://www.world-fuel-services.com
+    url: https://www.world-kinect.com
+  - type: Support
+    url: https://www.world-kinect.com/about-us/contact-world-kinect
+  - type: Blog
+    url: https://www.world-kinect.com/news-insights
+  - type: PrivacyPolicy
+    url: https://www.world-kinect.com/your-privacy-center/privacy-policy
+  - type: TermsOfService
+    url: https://www.world-kinect.com/website-terms-and-conditions
+  - type: Login
+    url: https://myworld.wfscorp.com/
+  - type: WellKnown
+    url: well-known/world-fuel-services-well-known.yml
+  - type: Authentication
+    url: authentication/world-fuel-services-authentication.yml
+  - type: OAuthScopes
+    url: scopes/world-fuel-services-scopes.yml
+  - type: Conformance
+    url: conformance/world-fuel-services-conformance.yml
+  - type: LLMsTxt
+    url: llms/world-fuel-services-llms.txt
+  - type: Plans
+    url: plans/world-fuel-services-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/world-fuel-services-rate-limits.yml
 description: >-
-  World Fuel Services (now World Kinect) is a global energy management company that
-  delivers innovative solutions in the global aviation, marine, and land energy markets.
+  World Fuel Services, which rebranded as World Kinect Corporation in 2023, is a Miami-based
+  Fortune 100 global energy management company that supplies fuel, energy and related products
+  and services across three segments — aviation, marine and land. It sells and distributes
+  jet fuel, marine bunker fuel, diesel, gasoline, natural gas, power, lubricants and renewable
+  fuels to airlines, business aviation operators, airports and FBOs, shipping fleets and ports,
+  commercial and industrial customers, government and military accounts, and retail petroleum
+  networks in more than 200 countries and territories. Its technology brands include the
+  myWorld aviation portal and app, Trip View, AVCARD and EPIC fuel cards, the World Kinect
+  Online energy portal, and the trip-support business acquired from Universal Weather and
+  Aviation in 2024. Digital delivery is customer-portal-first: integrations such as fuel-price
+  feeds into flight-planning platforms are arranged commercially rather than through a public
+  developer program.
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 12
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Every World Kinect machine surface sits behind the myWorld customer portal, and portal
+    access is granted only after a sales contact form — the company publishes no developer
+    portal, no API reference and no contract, and the one anonymously readable machine-readable
+    document on any host it controls is the Auth0 OIDC discovery metadata at auth.wfscorp.com.
+  evidence:
+    - url: https://auth.wfscorp.com/.well-known/openid-configuration
+      status: 200
+    - url: https://www.world-kinect.com/about-us/contact-us/portal-access-form
+      status: 200
+    - url: https://www.world-kinect.com/openapi.json
+      status: 404
+    - url: https://myworld.wfscorp.com/.well-known/agent-card.json
+      status: 200
+    - url: https://www.world-fuel-services.com
+      status: 0
+  checked: '2026-08-29'

@@ -1,0 +1,48 @@
+generated: '2026-08-29'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + brand hosts (2026-08-29)
+note: >-
+  probe-domain-security.py covered the corporate host; auth.wfscorp.com (the Auth0-backed
+  identity host behind the myWorld customer portal) and myworld.wfscorp.com were probed by
+  hand in the same pass and appended here with their observed values. The legacy pointer host
+  www.world-fuel-services.com does not resolve at all (NXDOMAIN) and was removed from apis.yml.
+hosts:
+- host: www.world-kinect.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 13 04:09:42 2026 GMT
+  hsts: true
+  hsts_max_age: 15768000
+- host: auth.wfscorp.com
+  https: true
+  http_version: HTTP/2
+  cert_expires: Nov 25 21:34:29 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  note: OIDC issuer for the myWorld portal; serves /.well-known/openid-configuration.
+- host: myworld.wfscorp.com
+  https: true
+  http_version: HTTP/2
+  cert_expires: Nov  9 20:56:35 2026 GMT
+  hsts: false
+  note: >-
+    Customer portal SPA. No Strict-Transport-Security header observed on the document
+    response, and the host answers 200 with the SPA shell for every /.well-known/* path.
+- host: www.world-fuel-services.com
+  https: false
+  note: DNS does not resolve (NXDOMAIN) — the domain in the previous apis.yml Website pointer.
+domains:
+- domain: world-kinect.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: wfscorp.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+  note: DMARC reports route to tenant.admin@worldfuelservices.onmicrosoft.com.

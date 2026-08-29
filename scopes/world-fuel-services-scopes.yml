@@ -1,0 +1,60 @@
+generated: '2026-08-29'
+method: probed
+source: https://auth.wfscorp.com/.well-known/openid-configuration
+docs: null
+note: >-
+  These are the values in `scopes_supported` on World Kinect's own OIDC discovery document,
+  copied verbatim. There is no published scopes/permissions reference page, and no
+  API-specific (audience) scopes are advertised anonymously — the list is the standard OpenID
+  Connect / Auth0 profile set, which tells an integrator what identity claims the portal's
+  tokens can carry but nothing about what the underlying fuel, pricing or trip APIs authorize.
+  derive-oauth-scopes.py was not run: it derives from OpenAPI oauth2 securitySchemes and this
+  provider publishes no OpenAPI.
+authorization_server: https://auth.wfscorp.com/
+scope_count: 14
+scopes:
+- scope: openid
+  description: OpenID Connect — request an ID token.
+- scope: profile
+  description: Standard profile claims.
+- scope: offline_access
+  description: Issue a refresh token.
+- scope: name
+  description: name claim.
+- scope: given_name
+  description: given_name claim.
+- scope: family_name
+  description: family_name claim.
+- scope: nickname
+  description: nickname claim.
+- scope: email
+  description: email claim.
+- scope: email_verified
+  description: email_verified claim.
+- scope: picture
+  description: picture claim.
+- scope: created_at
+  description: created_at claim.
+- scope: identities
+  description: Linked identity providers for the user.
+- scope: phone
+  description: phone_number claim.
+- scope: address
+  description: address claim.
+claims_supported:
+- aud
+- auth_time
+- created_at
+- email
+- email_verified
+- exp
+- family_name
+- given_name
+- iat
+- identities
+- iss
+- name
+- nickname
+- phone_number
+- picture
+- sub

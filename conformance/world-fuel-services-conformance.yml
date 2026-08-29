@@ -1,0 +1,94 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  https://auth.wfscorp.com/.well-known/openid-configuration and
+  https://auth.wfscorp.com/.well-known/oauth-authorization-server, plus HTTP probes of the
+  World Kinect brand hosts (2026-08-29).
+note: >-
+  Only the identity layer produced machine-readable evidence. World Kinect publishes no
+  OpenAPI, no AsyncAPI and no public API reference, so every contract-level standard below is
+  recorded as not conforming for want of a contract to assert it against — an absence, not a
+  failure. No domain standard for the energy / aviation-fuel market (for example IATA IFCP or
+  IATA Fuel Data Standards) is declared anywhere machine-readable on these hosts.
+standards:
+- id: oidc
+  name: OpenID Connect Discovery 1.0
+  conforms: true
+  evidence: >-
+    https://auth.wfscorp.com/.well-known/openid-configuration returns a complete discovery
+    document (issuer, authorization_endpoint, token_endpoint, userinfo_endpoint, jwks_uri).
+- id: oauth2
+  name: OAuth 2.0
+  conforms: true
+  evidence: >-
+    authorization_code, client_credentials, refresh_token, device_code and token-exchange
+    grants advertised in grant_types_supported.
+- id: rfc8414
+  name: OAuth 2.0 Authorization Server Metadata (RFC 8414)
+  conforms: true
+  evidence: >-
+    /.well-known/oauth-authorization-server returns 200 with the same metadata document.
+- id: rfc7636
+  name: PKCE (RFC 7636)
+  conforms: true
+  evidence: 'code_challenge_methods_supported: [S256, plain]'
+- id: rfc9449
+  name: OAuth 2.0 DPoP (RFC 9449)
+  conforms: true
+  evidence: 'dpop_signing_alg_values_supported: [ES256]'
+- id: rfc7009
+  name: OAuth 2.0 Token Revocation (RFC 7009)
+  conforms: true
+  evidence: revocation_endpoint = https://auth.wfscorp.com/oauth/revoke
+- id: rfc7591
+  name: OAuth 2.0 Dynamic Client Registration (RFC 7591)
+  conforms: true
+  evidence: registration_endpoint = https://auth.wfscorp.com/oidc/register
+- id: rfc8628
+  name: OAuth 2.0 Device Authorization Grant (RFC 8628)
+  conforms: true
+  evidence: device_authorization_endpoint = https://auth.wfscorp.com/oauth/device/code
+- id: ciba
+  name: OpenID Connect CIBA
+  conforms: true
+  evidence: 'backchannel_authentication_endpoint present; backchannel_token_delivery_modes_supported: [poll]'
+- id: fapi
+  name: FAPI 1.0 / 2.0
+  conforms: false
+  evidence: >-
+    No FAPI profile advertised; `none` remains an accepted token_endpoint_auth_method,
+    `plain` PKCE and the implicit and ROPC grants are still enabled, and neither PAR
+    (pushed_authorization_request_endpoint) nor request objects are supported
+    (request_parameter_supported and request_uri_parameter_supported are both false).
+- id: rfc9457
+  name: Problem Details for HTTP APIs (RFC 9457)
+  conforms: false
+  evidence: No public contract or error reference to assert it against.
+- id: openapi
+  name: OpenAPI Specification
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document found at any probed location on www.world-kinect.com,
+    wfscorp.com, myworld.wfscorp.com, auth.wfscorp.com or the brand hosts.
+- id: asyncapi
+  name: AsyncAPI
+  conforms: false
+  evidence: No published event, streaming or webhook surface found.
+- id: mcp
+  name: Model Context Protocol
+  conforms: false
+  evidence: No hosted or packaged MCP server published.
+- id: a2a
+  name: A2A Agent Card
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json 404 on every corporate host;
+    myworld.wfscorp.com returns the SPA shell for both, which is not a card.
+domain_standards:
+- id: iata-fuel-data-standards
+  name: IATA Fuel Data Standards / IFCP
+  declared: false
+  evidence: >-
+    Nothing on the aviation technology pages or in any machine-readable document on these
+    hosts declares an IATA fuel messaging standard. Recorded as an honest absence — the
+    reward-only domain-standard check is not penalised here.

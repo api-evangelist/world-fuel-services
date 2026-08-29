@@ -1,0 +1,128 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  Direct HTTP probes of /.well-known/* on every World Kinect-controlled host found in this pass
+  (2026-08-29). Hosts were established from apis.yml, the corporate sitemap, the brand sites and
+  the myWorld portal's own JavaScript bundle, which names auth.wfscorp.com as its identity host.
+note: >-
+  One real hit: auth.wfscorp.com serves an RFC 8414 / OpenID Connect Discovery document (and the
+  identical document at the OAuth authorization-server path) for the Auth0 tenant behind the
+  myWorld customer portal. Everything else is a miss. myworld.wfscorp.com answers HTTP 200 with
+  the Angular SPA shell for EVERY /.well-known/* path — those are recorded as 200 but are not
+  documents, and are treated as misses. wfscorp.com and www.epicfuels.com 301 to their canonical
+  hosts.
+hosts:
+- host: auth.wfscorp.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: world-fuel-services-openid-configuration.json
+    content_type: application/json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: world-fuel-services-oauth-authorization-server.json
+    content_type: application/json
+  - path: /.well-known/jwks.json
+    status: 200
+    file: world-fuel-services-jwks.json
+    content_type: application/json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+- host: www.world-kinect.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: myworld.wfscorp.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: SPA shell (text/html) — not a document; catch-all route, counted as a miss.
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: SPA shell (text/html) — not a document; the real issuer document is on auth.wfscorp.com.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: SPA shell (text/html) — not a document.
+  - path: /.well-known/api-catalog
+    status: 200
+    note: SPA shell (text/html) — not a document.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: SPA shell (text/html) — not a document.
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: SPA shell (text/html) — not an AgentCard; no a2a/ artifact was written.
+  - path: /.well-known/agent.json
+    status: 200
+    note: SPA shell (text/html) — not an AgentCard.
+- host: wfscorp.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    note: Redirects to www.world-kinect.com, which 404s the same path.
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+- host: www.flyersenergy.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: www.epicfuels.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+- host: www.avcard.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

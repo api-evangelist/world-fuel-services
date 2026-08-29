@@ -1,0 +1,18 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://www.world-kinect.com (no developer documentation exists to carry limits) and
+  https://www.flyersenergy.com/llms.txt (HTTP 200)
+limit_count: 0
+note: >-
+  No API rate limits are published, because no public API is documented — there is no
+  developer portal, reference or contract on any World Kinect host to state a limit, a window,
+  or a response header. No X-RateLimit-*, RateLimit-* or Retry-After header could be observed
+  either, since there is no anonymous API endpoint to call. The single rate statement found
+  anywhere on the company's surface is crawler guidance, not an API limit: the Flyers Energy
+  llms.txt asserts "Base Rate: 100 requests per hour per IP" for AI agents reading that
+  website's content. It is recorded here for the reader but deliberately NOT counted as an API
+  rate limit — it governs website crawling, and that file is itself an unconfigured template
+  whose links all point at a local development hostname.
+limits: []
+headers: []

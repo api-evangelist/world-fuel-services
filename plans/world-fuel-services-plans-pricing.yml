@@ -1,0 +1,14 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://www.world-kinect.com (sitemap of 395 URLs reviewed), plus
+  https://www.world-kinect.com/fuel-lubricants/world-kinect-customer-portals and
+  https://www.world-kinect.com/about-us/contact-us/portal-access-form (both HTTP 200)
+plan_count: 0
+note: >-
+  World Kinect publishes no API plans, no developer tiers and no self-service pricing of any
+  kind. It is a commodity energy supplier: fuel, power and gas are sold under negotiated
+  supply contracts, and access to the customer portals (myWorld, World Kinect Online) is
+  requested through a contact form and provisioned by an account team. There is no pricing
+  page for software or data access to record. An honest zero, not a gap in the search.
+plans: []
