@@ -1,0 +1,14 @@
+{
+  "repo": "world-fuel-services",
+  "feeds": [
+    {
+      "source": "https://www.world-kinect.com/about-us/contact-world-kinect",
+      "feed_url": "https://www.world-kinect.com/about-us/contact-world-kinect",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-30T22:33:40Z"
+}
