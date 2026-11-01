@@ -64,12 +64,102 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-This is a repository for tracking the APIs, SDKs, and other developer resources for World Fuel Services.
+World Fuel Services, which rebranded as World Kinect Corporation in 2023, is a Miami-based Fortune 100 global energy management company that supplies fuel, energy and related products and services across three segments — aviation, marine and land. It sells and distributes jet fuel, marine bunker fuel, diesel, gasoline, natural gas, power, lubricants and renewable fuels to airlines, business aviation operators, airports and FBOs, shipping fleets and ports, commercial and industrial customers, government and military accounts, and retail petroleum networks in more than 200 countries and territories. Its technology brands include the myWorld aviation portal and app, Trip View, AVCARD and EPIC fuel cards, the World Kinect Online energy portal, and the trip-support business acquired from Universal Weather and Aviation in 2024. Digital delivery is customer-portal-first: integrations such as fuel-price feeds into flight-planning platforms are arranged commercially rather than through a public developer program.
 
-## APIs
+**Areas:** Fortune 100 · Energy · Aviation Fuel · Marine Fuel · Fuel Distribution · Energy Management · Sustainability · Logistics · Fuel Cards
 
-No APIs have been documented yet. Check back for updates.
+## World Fuel Services on APIs.io
 
-## Properties
+Everything profiled for World Fuel Services is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/world-fuel-services/](https://apis.io/providers/world-fuel-services/)** — or go straight to one of the APIs or properties below.
 
-- [Website](https://www.world-fuel-services.com)
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [World Fuel Services Authentication](https://apis.io/security/world-fuel-services/world-fuel-services-authentication/)
+- [World Fuel Services Domain Security](https://apis.io/security/world-fuel-services/world-fuel-services-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [World Fuel Services Scopes](https://apis.io/scopes/world-fuel-services/world-fuel-services-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [World Fuel Services Plans Pricing](https://apis.io/plans/world-fuel-services/world-fuel-services-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [World Fuel Services Rate Limits](https://apis.io/rate-limits/world-fuel-services/world-fuel-services-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.world-kinect.com)
+- [Support](https://www.world-kinect.com/about-us/contact-world-kinect)
+- [Blog](https://www.world-kinect.com/news-insights)
+- [Terms of service](https://www.world-kinect.com/website-terms-and-conditions)
+- [Privacy policy](https://www.world-kinect.com/your-privacy-center/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 20.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 27.6 |
+
+**Agent readiness 17.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 34.4** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/world-fuel-services/](https://apis.io/providers/world-fuel-services/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for World Fuel Services: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/world-fuel-services/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
